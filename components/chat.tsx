@@ -12,7 +12,6 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { ResumePanel } from "@/components/resume-panel";
 import { WhyHireMePanel } from "@/components/why-hire-me-panel";
 
 export function Chat() {
@@ -39,7 +38,7 @@ export function Chat() {
   });
 
   const [splitScreenMode, setSplitScreenMode] = React.useState<
-    "none" | "resume" | "whyHireMe"
+    "none" | "whyHireMe"
   >("none");
   const [panelVisible, setPanelVisible] = React.useState(false);
   const rightPanelRef = React.useRef<HTMLDivElement | null>(null);
@@ -50,7 +49,7 @@ export function Chat() {
 
   const openPanel = React.useCallback(
     (
-      mode: "resume" | "whyHireMe",
+      mode: "whyHireMe",
       { ensureVisible = true }: { ensureVisible?: boolean } = {},
     ) => {
       setSplitScreenMode(mode);
@@ -62,7 +61,7 @@ export function Chat() {
   );
 
   const handleResume = () => {
-    openPanel("resume");
+    openPanel("whyHireMe");
   };
 
   const handleWhyHireMe = () => {
@@ -129,14 +128,6 @@ export function Chat() {
                       size="sm"
                       variant="outline"
                       className="w-full h-auto px-3 py-2.5 text-xs sm:text-sm font-semibold whitespace-normal leading-snug"
-                      onClick={handleResume}
-                    >
-                      Resume
-                    </Button>
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="w-full h-auto px-3 py-2.5 text-xs sm:text-sm font-semibold whitespace-normal leading-snug"
                       onClick={handleWhyHireMe}
                     >
                       Why hire me?
@@ -154,7 +145,6 @@ export function Chat() {
             {/* Show overview centered when no messages */}
             {!hasMessages && (
               <Overview
-                onResume={handleResume}
                 onWhyHireMe={handleWhyHireMe}
               />
             )}
@@ -216,7 +206,6 @@ export function Chat() {
           </div>
 
           <div className="flex-1 overflow-y-auto">
-            {splitScreenMode === "resume" && <ResumePanel />}
             {splitScreenMode === "whyHireMe" && <WhyHireMePanel />}
           </div>
         </div>
