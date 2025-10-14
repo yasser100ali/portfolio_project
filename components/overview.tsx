@@ -26,8 +26,7 @@ export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
             Yasser Ali
           </h1>
           <div className="flex items-center justify-center gap-2 text-muted-foreground">
-            <span className="text-sm">by</span>
-            <span className="text-base font-medium">Yasser Ali</span>
+            <span className="text-base font-medium">AI Engineer</span>
           </div>
         </motion.div>
 
@@ -46,7 +45,7 @@ export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
           transition={{ delay: 0.5, duration: 0.5 }}
           className="text-muted-foreground text-base md:text-lg"
         >
-          Production-grade multi-agent AI systems for legal tech
+          I craft intelligent AI solutions that empower teams to achieve unprecedented productivity and innovation
         </motion.p>
 
         {/* Buttons */}
