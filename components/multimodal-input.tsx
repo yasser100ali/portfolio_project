@@ -21,9 +21,14 @@ import { Textarea } from "./ui/textarea";
 
 const suggestedActions = [
   {
-    title: "Why hire Yasser?",
-    label: "",
+    title: "> WHY_HIRE_ME.EXE",
+    label: "# Learn about expertise",
     action: "Why should I hire Yasser for my project?",
+  },
+  {
+    title: "> VIEW_PROJECTS.SYS",
+    label: "# See completed work",
+    action: "Tell me about your most impressive projects and achievements",
   },
 ];
 
@@ -130,10 +135,12 @@ export function MultimodalInput({
                     content: suggestedAction.action,
                   });
                 }}
-                className="text-left border rounded-xl px-4 py-3.5 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start"
+                className="text-left border-2 border-cyan-500/30 hover:border-cyan-400 px-4 py-3.5 text-sm flex-1 gap-1 sm:flex-col w-full h-auto justify-start items-start bg-black/30 hover:bg-cyan-500/10 transition-all font-mono rounded-none relative group"
               >
-                <span className="font-medium">{suggestedAction.title}</span>
-                <span className="text-muted-foreground">
+                <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-cyan-400 opacity-0 group-hover:opacity-100 transition-opacity" />
+                <span className="font-bold text-cyan-400 group-hover:text-green-400 transition-colors tracking-wider">{suggestedAction.title}</span>
+                <span className="text-gray-400 text-xs">
                   {suggestedAction.label}
                 </span>
               </Button>
@@ -144,11 +151,11 @@ export function MultimodalInput({
 
       <Textarea
         ref={textareaRef}
-        placeholder="Send a message..."
+        placeholder="> ENTER_QUERY_"
         value={input}
         onChange={handleInput}
         className={cn(
-          "min-h-[24px] max-h-[calc(75dvh)] overflow-hidden resize-none rounded-xl !text-base bg-muted",
+          "min-h-[24px] max-h-[calc(75dvh)] overflow-hidden resize-none !text-base bg-black/50 border-2 border-cyan-500/30 focus:border-cyan-400 transition-all font-mono text-gray-300 rounded-none",
           className,
         )}
         rows={3}
@@ -168,7 +175,7 @@ export function MultimodalInput({
 
       {isLoading ? (
         <Button
-          className="rounded-full p-1.5 h-fit absolute bottom-2 right-2 m-0.5 border dark:border-zinc-600"
+          className="p-1.5 h-fit absolute bottom-2 right-2 m-0.5 bg-cyan-500/20 border-2 border-cyan-400 hover:bg-cyan-400 hover:text-black transition-all rounded-none"
           onClick={(event) => {
             event.preventDefault();
             stop();
@@ -179,7 +186,7 @@ export function MultimodalInput({
         </Button>
       ) : (
         <Button
-          className="rounded-full p-1.5 h-fit absolute bottom-2 right-2 m-0.5 border dark:border-zinc-600"
+          className="p-1.5 h-fit absolute bottom-2 right-2 m-0.5 bg-green-500/20 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-none"
           onClick={(event) => {
             event.preventDefault();
             submitForm();

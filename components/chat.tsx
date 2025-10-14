@@ -101,37 +101,39 @@ export function Chat() {
                 duration: 0.6, 
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              className="flex-shrink-0 border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/80"
+              className="flex-shrink-0 border-b-2 border-cyan-500/30 bg-black/80 backdrop-blur-lg"
             >
               <div className="px-4 py-4">
                 <div className="flex flex-col gap-3 max-w-4xl mx-auto">
                   <motion.div 
-                    className="flex flex-col gap-0.5"
+                    className="flex items-center justify-between"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     transition={{ delay: 0.3, duration: 0.3 }}
                   >
-                    <p className="text-white font-medium text-base sm:text-lg leading-tight tracking-tight">
-                      Yasser Ali
-                    </p>
-                    <p className="text-muted-foreground font-normal text-xs sm:text-sm tracking-tight">
-                      AI Engineer
-                    </p>
-                  </motion.div>
-                  <motion.div
-                    className="grid grid-cols-1 sm:grid-cols-2 gap-3"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.3 }}
-                  >
-                    <Button
-                      size="sm"
-                      variant="outline"
-                      className="w-full h-auto px-3 py-2.5 text-xs sm:text-sm font-semibold whitespace-normal leading-snug"
-                      onClick={handleWhyHireMe}
+                    <div className="flex flex-col gap-1">
+                      <p className="text-cyan-400 font-mono font-bold text-base sm:text-lg leading-tight tracking-wider uppercase" style={{ textShadow: '0 0 10px rgba(0,255,255,0.8)' }}>
+                        [YASSER_ALI]
+                      </p>
+                      <p className="text-green-400 font-mono text-xs sm:text-sm tracking-wider">
+                        &gt; AI_ENGINEER.SYS
+                      </p>
+                    </div>
+                    <motion.div
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: 0.4 }}
                     >
-                      Why hire me?
-                    </Button>
+                      <Button
+                        size="sm"
+                        variant="outline"
+                        className="h-auto px-3 py-2 text-xs font-mono font-bold border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/20 bg-black/30 transition-all uppercase tracking-wider text-cyan-400"
+                        onClick={handleWhyHireMe}
+                      >
+                        <span className="mr-2">&gt;</span>
+                        INFO
+                      </Button>
+                    </motion.div>
                   </motion.div>
                 </div>
               </div>
@@ -145,6 +147,7 @@ export function Chat() {
             {/* Show overview centered when no messages */}
             {!hasMessages && (
               <Overview
+                onResume={handleResume}
                 onWhyHireMe={handleWhyHireMe}
               />
             )}
