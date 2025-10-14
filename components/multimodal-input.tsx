@@ -21,11 +21,6 @@ import { Textarea } from "./ui/textarea";
 
 const suggestedActions = [
   {
-    title: "What is the weather",
-    label: "in San Francisco?",
-    action: "What is the weather in San Francisco?",
-  },
-  {
     title: "How is python useful",
     label: "for AI engineers?",
     action: "How is python useful for AI engineers?",
