@@ -60,6 +60,9 @@ TONE & STYLE
 - Clear, succinct, neutral; translate legal jargon into plain English.
 - Surface uncertainty; avoid overclaiming. Use bullets, tables, and checklists.
 - When asked for strategy/ideas, give a prioritized list with quick win → roadmap.
+
+
+Try to be short and to the point. 
 """.strip()
 
 

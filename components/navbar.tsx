@@ -10,7 +10,7 @@ export const Navbar = () => {
       initial={{ y: -20, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="sticky top-0 z-50 w-full border-b-2 border-cyan-500/30 bg-black/80 backdrop-blur-lg"
+      className="sticky top-0 z-50 w-full border-b border-gray-800 bg-black/90 backdrop-blur-lg"
     >
       <div className="container mx-auto px-4 lg:px-8">
         <div className="flex h-16 items-center justify-between">
@@ -21,9 +21,7 @@ export const Navbar = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center relative"
           >
-            <div className="relative px-3 py-1 border-2 border-cyan-400 bg-black/50 font-mono font-bold text-cyan-400 tracking-wider" style={{ textShadow: '0 0 10px rgba(0,255,255,0.8)' }}>
-              <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-green-400" />
-              <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-green-400" />
+            <div className="relative px-3 py-1 border border-gray-600 bg-black/50 font-mono font-bold text-gray-300 tracking-wider">
               [YA]
             </div>
           </motion.div>
@@ -37,31 +35,27 @@ export const Navbar = () => {
           >
             <a 
               href="#home" 
-              className="text-sm font-mono font-medium text-green-400 hover:text-cyan-400 transition-colors tracking-wider uppercase"
-              style={{ textShadow: '0 0 5px currentColor' }}
+              className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
-              [HOME]
+              Home
             </a>
             <a 
               href="#about" 
-              className="text-sm font-mono font-medium text-green-400 hover:text-cyan-400 transition-colors tracking-wider uppercase"
-              style={{ textShadow: '0 0 5px currentColor' }}
+              className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
-              [ABOUT]
+              About
             </a>
             <a 
               href="#skills" 
-              className="text-sm font-mono font-medium text-green-400 hover:text-cyan-400 transition-colors tracking-wider uppercase"
-              style={{ textShadow: '0 0 5px currentColor' }}
+              className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
-              [SKILLS]
+              Skills
             </a>
             <a 
               href="#projects" 
-              className="text-sm font-mono font-medium text-green-400 hover:text-cyan-400 transition-colors tracking-wider uppercase"
-              style={{ textShadow: '0 0 5px currentColor' }}
+              className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
-              [PROJECTS]
+              Projects
             </a>
           </motion.div>
 
@@ -81,7 +75,7 @@ export const Navbar = () => {
               <Button 
                 variant="ghost" 
                 size="icon"
-                className="border border-cyan-400/50 hover:border-cyan-400 hover:bg-cyan-500/20 hover:text-cyan-400 transition-all text-cyan-400"
+                className="border border-gray-600 hover:border-gray-400 hover:bg-gray-800 hover:text-gray-200 transition-all text-gray-400"
               >
                 <GitIcon />
               </Button>
@@ -93,14 +87,11 @@ export const Navbar = () => {
             >
               <Button
                 size="sm"
-                className="relative bg-green-500/20 border-2 border-green-400 text-green-400 hover:bg-green-400 hover:text-black font-mono font-bold uppercase tracking-wider transition-all"
-                style={{ clipPath: 'polygon(0 0, calc(100% - 8px) 0, 100% 8px, 100% 100%, 8px 100%, 0 calc(100% - 8px))' }}
+                className="bg-white text-black hover:bg-gray-100 font-mono font-medium tracking-wide transition-all border border-gray-300"
               >
-                <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-green-400" />
-                <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-green-400" />
                 <span className="flex items-center">
                   <span className="mr-1">↓</span>
-                  CV
+                  Resume
                 </span>
               </Button>
             </a>

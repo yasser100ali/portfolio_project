@@ -101,7 +101,7 @@ export function Chat() {
                 duration: 0.6, 
                 ease: [0.25, 0.46, 0.45, 0.94],
               }}
-              className="flex-shrink-0 border-b-2 border-cyan-500/30 bg-black/80 backdrop-blur-lg"
+              className="flex-shrink-0 border-b border-gray-800 bg-black/90 backdrop-blur-lg"
             >
               <div className="px-4 py-4">
                 <div className="flex flex-col gap-3 max-w-4xl mx-auto">
@@ -112,11 +112,11 @@ export function Chat() {
                     transition={{ delay: 0.3, duration: 0.3 }}
                   >
                     <div className="flex flex-col gap-1">
-                      <p className="text-cyan-400 font-mono font-bold text-base sm:text-lg leading-tight tracking-wider uppercase" style={{ textShadow: '0 0 10px rgba(0,255,255,0.8)' }}>
-                        [YASSER_ALI]
+                      <p className="text-gray-200 font-mono font-bold text-base sm:text-lg leading-tight tracking-wide">
+                        Yasser Ali
                       </p>
-                      <p className="text-green-400 font-mono text-xs sm:text-sm tracking-wider">
-                        &gt; AI_ENGINEER.SYS
+                      <p className="text-gray-500 font-mono text-xs sm:text-sm tracking-wide">
+                        AI Engineer
                       </p>
                     </div>
                     <motion.div
@@ -127,11 +127,10 @@ export function Chat() {
                       <Button
                         size="sm"
                         variant="outline"
-                        className="h-auto px-3 py-2 text-xs font-mono font-bold border-2 border-cyan-500/50 hover:border-cyan-400 hover:bg-cyan-500/20 bg-black/30 transition-all uppercase tracking-wider text-cyan-400"
+                        className="h-auto px-3 py-2 text-xs font-mono font-medium border border-gray-600 hover:border-gray-400 hover:bg-gray-800 bg-black/30 transition-all tracking-wide text-gray-300"
                         onClick={handleWhyHireMe}
                       >
-                        <span className="mr-2">&gt;</span>
-                        INFO
+                        Info
                       </Button>
                     </motion.div>
                   </motion.div>
