@@ -28,7 +28,8 @@ def stream_text(messages: List[ChatCompletionMessageParam], protocol: str = 'dat
 
     stream = client.chat.completions.create(
         messages=messages,
-        model="gpt-4.1",
+        
+        model="gpt-4.1-nano-2025-04-14",
         stream=True,
     )
 
