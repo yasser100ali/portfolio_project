@@ -179,39 +179,6 @@ export function Chat() {
           </div>
 
           <div className="flex-shrink-0 mx-auto px-4 bg-background pb-4 md:pb-6 w-full md:max-w-3xl">
-            {/* Suggested Prompts - only show when no messages */}
-            {!hasMessages && (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4 [@media(max-height:750px)]:hidden">
-                {[
-                  { title: "Tell me about Yasser.", action: "Tell me about Yasser" },
-                  { title: "How can I use this chatbot?", action: "How can I use this chatbot?" },
-                  { title: "How do you determine how strong a case is?", action: "How do you determine how strong a case is?" },
-                  { title: "How can I reduce hallucinations?", action: "How can I reduce hallucinations?" },
-                ].map((prompt, index) => (
-                  <motion.div
-                    key={`suggested-${index}`}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.6 + index * 0.1, duration: 0.3 }}
-                  >
-                    <Button
-                      variant="ghost"
-                      onClick={() => {
-                        setInput(prompt.action);
-                        setTimeout(() => {
-                          handleSubmit();
-                        }, 100);
-                      }}
-                      className="w-full h-auto justify-start items-start text-left border border-border/40 rounded-xl px-4 py-3 hover:bg-accent/50 hover:border-border transition-all whitespace-normal"
-                    >
-                      <span className="text-sm text-foreground/80 font-normal break-words">
-                        {prompt.title}
-                      </span>
-                    </Button>
-                  </motion.div>
-                ))}
-              </div>
-            )}
             
             <MultimodalInput
               chatId={chatId}
