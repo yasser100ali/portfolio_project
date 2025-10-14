@@ -107,22 +107,6 @@ export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
           </Button>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-          className="pt-12"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="inline-flex flex-col items-center gap-2"
-          >
-            <span className="text-xs font-mono text-gray-500 tracking-wider">Scroll</span>
-            <div className="w-px h-8 bg-gradient-to-b from-gray-500 to-transparent" />
-          </motion.div>
-        </motion.div>
       </div>
     </motion.div>
   );

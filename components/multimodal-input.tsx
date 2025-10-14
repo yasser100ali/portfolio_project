@@ -149,7 +149,7 @@ export function MultimodalInput({
 
       <Textarea
         ref={textareaRef}
-        placeholder="Ask me anything..."
+        placeholder="What would you like to know about Yasser..."
         value={input}
         onChange={handleInput}
         className={cn(
