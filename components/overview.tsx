@@ -66,6 +66,7 @@ export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
             </span>
             <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-500 to-transparent" />
           </div>
+
         </motion.div>
 
         {/* Description */}
@@ -73,37 +74,26 @@ export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-          className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-mono"
+          className="text-gray-400 text-lg md:text-xl max-w-3xl mx-auto leading-relaxed font-mono pt-8"
         >
           <span className="text-gray-500">&gt;_</span> Building intelligent AI systems that
           <span className="text-gray-300 font-semibold"> maximize efficiency</span> and
           <span className="text-gray-300 font-semibold"> drive innovation</span>
         </motion.p>
 
-        {/* Buttons */}
+        {/* Why Hire Me Button - below description */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.6, duration: 0.6 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center max-w-2xl mx-auto pt-6"
+          className="pt-8"
         >
           <Button
             size="lg"
             onClick={onWhyHireMe}
-            className="relative w-full sm:w-auto text-base font-mono h-12 px-8 bg-white text-black border border-gray-300 hover:bg-gray-100 transition-all tracking-wide"
+            className="text-base font-mono h-12 px-8 bg-white text-black border border-gray-300 hover:bg-gray-100 transition-all tracking-wide"
           >
             <span className="relative z-10">Why hire me</span>
-          </Button>
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={onResume}
-            className="relative w-full sm:w-auto text-base font-mono h-12 px-8 bg-transparent border border-gray-500 text-gray-300 hover:bg-gray-800 hover:border-gray-400 transition-all tracking-wide"
-          >
-            <span className="relative z-10 flex items-center">
-              <span className="mr-2">↓</span>
-              Download Resume
-            </span>
           </Button>
         </motion.div>
 
