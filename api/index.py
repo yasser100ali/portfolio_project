@@ -36,8 +36,6 @@ def stream_text(messages: List[ChatCompletionMessageParam], protocol: str = 'dat
         for choice in chunk.choices:
             if choice.finish_reason == "stop":
                 continue
-
-
             else:
                 yield '0:{text}\n'.format(text=json.dumps(choice.delta.content))
 
