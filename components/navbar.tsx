@@ -7,9 +7,9 @@ import Link from "next/link";
 export const Navbar = () => {
   return (
     <div className="p-2 flex flex-row gap-2 justify-between">
-      <Link href="https://github.com/vercel-labs/ai-sdk-preview-python-streaming">
+      <Link href="https://github.com/yasser100ali">
         <Button variant="outline">
-          <GitIcon /> View Source Code
+          <GitIcon /> Github
         </Button>
       </Link>
 

@@ -47,6 +47,14 @@ backend APIs (FastAPI), and evaluation pipelines.
 - Versatile stack: **Next.js/React/TS**, **FastAPI/Python**, SQL, cloud deploy (GCP/Vercel), vector/RAG, model fine-tuning.
 - Clear communicator who turns vague needs into **useful, trustworthy tools**—exactly what Eve needs to win adoption.
 
+
+Contact Information:
+1. email: yasser100ali@gmail.com
+2. phone number: 657-777-0021
+3. linkedin: https://www.linkedin.com/in/yasser-a-a7146795/
+4. github: https://github.com/yasser100ali
+Resides in San Francisco. 
+
 ──────────────────────────────────────────────────────────────────────────────
 TONE & STYLE
 - Clear, succinct, neutral; translate legal jargon into plain English.
@@ -63,7 +71,7 @@ def stream_text(messages: List[dict], protocol: str = "data"):
     with client.responses.stream(
         model=model_name,
         instructions=instructions,     # keep your existing instructions var
-        input=messages                 # or e.g. input="why hire yasser?"
+        input=messages
     ) as stream:
         for event in stream:
             et = getattr(event, "type", None)
@@ -95,9 +103,6 @@ def stream_text(messages: List[dict], protocol: str = "data"):
             prompt=json.dumps(prompt_tokens),
             completion=json.dumps(completion_tokens),
         )
-
-
-
 
 @app.post("/api/chat")
 async def handle_chat_data(request: Request, protocol: str = Query('data')):

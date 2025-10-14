@@ -21,9 +21,9 @@ import { Textarea } from "./ui/textarea";
 
 const suggestedActions = [
   {
-    title: "How is python useful",
-    label: "for AI engineers?",
-    action: "How is python useful for AI engineers?",
+    title: "Why hire Yasser?",
+    label: "",
+    action: "Why should I hire Yasser for my project?",
   },
 ];
 
