@@ -21,9 +21,11 @@ export const Navbar = () => {
             transition={{ delay: 0.2 }}
             className="flex items-center relative"
           >
-            <div className="relative px-3 py-1 border border-gray-600 bg-black/50 font-mono font-bold text-gray-300 tracking-wider">
-              [YA]
-            </div>
+            <a href="/" className="no-underline">
+              <div className="relative px-3 py-1 border border-gray-600 bg-black/50 font-mono font-bold text-gray-300 tracking-wider hover:border-gray-400 hover:bg-gray-800/50 transition-all cursor-pointer">
+                [YA]
+              </div>
+            </a>
           </motion.div>
 
           {/* Navigation Links */}
@@ -33,14 +35,8 @@ export const Navbar = () => {
             transition={{ delay: 0.3 }}
             className="hidden md:flex items-center gap-6"
           >
-            <a 
-              href="#home" 
-              className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
-            >
-              Home
-            </a>
-            <a 
-              href="#about" 
+            <a
+              href="#about"
               className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
               About
