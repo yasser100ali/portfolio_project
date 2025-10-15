@@ -1,12 +1,10 @@
 import { motion } from "framer-motion";
-import { Button } from "./ui/button";
 
 interface OverviewProps {
   onResume: () => void;
-  onWhyHireMe: () => void;
 }
 
-export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
+export const Overview = ({ onResume }: OverviewProps) => {
   return (
     <motion.div
       key="overview"
@@ -80,22 +78,6 @@ export const Overview = ({ onResume, onWhyHireMe }: OverviewProps) => {
           <span className="text-gray-300 font-semibold"> maximize efficiency</span> and
           <span className="text-gray-300 font-semibold"> drive innovation</span>
         </motion.p>
-
-        {/* Why Hire Me Button - below description */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.6 }}
-          className="pt-8"
-        >
-          <Button
-            size="lg"
-            onClick={onWhyHireMe}
-            className="text-base font-mono h-12 px-8 bg-white text-black border border-gray-300 hover:bg-gray-100 transition-all tracking-wide"
-          >
-            <span className="relative z-10">Why hire me</span>
-          </Button>
-        </motion.div>
 
       </div>
     </motion.div>

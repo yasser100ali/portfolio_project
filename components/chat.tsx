@@ -64,10 +64,6 @@ export function Chat() {
     openPanel("whyHireMe");
   };
 
-  const handleWhyHireMe = () => {
-    openPanel("whyHireMe");
-  };
-
   const handleBackToChat = () => {
     setPanelVisible(false);
     const node = rightPanelRef.current;
@@ -101,7 +97,6 @@ export function Chat() {
             {!hasMessages && (
               <Overview
                 onResume={handleResume}
-                onWhyHireMe={handleWhyHireMe}
               />
             )}
 

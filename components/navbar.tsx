@@ -42,10 +42,10 @@ export const Navbar = () => {
               Resume
             </a>
             <a 
-              href="#skills" 
+              href="/why-hire-me" 
               className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
-              Skills
+              Why hire me
             </a>
             <a 
               href="#projects" 
