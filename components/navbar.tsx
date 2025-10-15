@@ -36,10 +36,10 @@ export const Navbar = () => {
             className="hidden md:flex items-center gap-6"
           >
             <a
-              href="#about"
+              href="/resume"
               className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
-              About
+              Resume
             </a>
             <a 
               href="#skills" 
@@ -74,21 +74,6 @@ export const Navbar = () => {
                 className="border border-gray-600 hover:border-gray-400 hover:bg-gray-800 hover:text-gray-200 transition-all text-gray-400"
               >
                 <GitIcon />
-              </Button>
-            </a>
-            <a 
-              href="/resume/yasser-ali-resume.pdf" 
-              download="yasser-ali-resume.pdf"
-              className="no-underline"
-            >
-              <Button
-                size="sm"
-                className="bg-white text-black hover:bg-gray-100 font-mono font-medium tracking-wide transition-all border border-gray-300"
-              >
-                <span className="flex items-center">
-                  <span className="mr-1">↓</span>
-                  Resume
-                </span>
               </Button>
             </a>
           </motion.div>
