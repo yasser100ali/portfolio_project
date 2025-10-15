@@ -295,11 +295,11 @@ export default function WhyHireMePage() {
             className="text-center border-t border-gray-800 pt-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold font-mono text-gray-200 mb-6">
-              Let's Build Something Great
+              Let&apos;s Build Something Great
             </h2>
             <p className="text-gray-400 font-mono mb-8 max-w-2xl mx-auto">
-              Ready to add an AI engineer who can turn your vision into reality? 
-              Let's talk about how I can help your team succeed.
+              Ready to add an AI engineer who can turn your vision into reality?
+              Let&apos;s talk about how I can help your team succeed.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
