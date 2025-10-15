@@ -1,37 +1,161 @@
-# AI SDK Python Streaming Preview
+# Yasser Ali - AI Engineer Portfolio
 
-This template demonstrates the usage of [Data Stream Protocol](https://sdk.vercel.ai/docs/ai-sdk-ui/stream-protocol#data-stream-protocol) to stream chat completions from a Python endpoint ([FastAPI](https://fastapi.tiangolo.com)) and display them using the [useChat](https://sdk.vercel.ai/docs/ai-sdk-ui/chatbot#chatbot) hook in your Next.js application.
+A modern, interactive portfolio website showcasing the work and expertise of Yasser Ali, an AI Engineer specializing in intelligent systems, machine learning, and full-stack development.
 
-## How to use
+![Portfolio Preview](https://via.placeholder.com/800x400/1a1a1a/00ff00?text=Yasser+Ali+Portfolio)
 
-Run [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+## ✨ Features
 
+### 🤖 AI-Powered Chat Interface
+- Interactive AI chatbot for portfolio inquiries
+- Real-time conversation with intelligent responses
+- "Why Hire Me" information panel
+- Seamless chat experience with typing indicators
+
+### 🎨 Modern Design
+- Clean, professional dark theme
+- Responsive design for all devices
+- Smooth animations and transitions
+- Terminal-inspired monospace typography
+- Subtle grid patterns and visual effects
+
+### 📄 Dedicated Resume Page
+- Professional PDF resume viewer
+- Direct download option
+- Clean, distraction-free viewing experience
+
+### 🚀 Performance Optimized
+- Next.js 14 with App Router
+- FastAPI backend for AI integration
+- Optimized images and assets
+- SEO-friendly structure
+
+## 🛠 Tech Stack
+
+### Frontend
+- **Next.js 14** - React framework with App Router
+- **React** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Utility-first styling
+- **Framer Motion** - Smooth animations
+
+### Backend
+- **FastAPI** - Python web framework
+- **OpenAI API** - AI chat completions
+- **Vercel AI SDK** - Streaming chat protocol
+
+### UI Components
+- **shadcn/ui** - Modern component library
+- **Lucide Icons** - Beautiful icon set
+- **Custom Components** - Tailored for portfolio
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js 18+
+- Python 3.8+
+- OpenAI API key (for chat functionality)
+
+### Installation
+
+1. **Clone the repository**
 ```bash
-npx create-next-app --example https://github.com/vercel-labs/ai-sdk-preview-python-streaming ai-sdk-preview-python-streaming-example
+git clone https://github.com/yasser100ali/portfolio.git
+cd portfolio
 ```
 
+2. **Install dependencies**
 ```bash
-yarn create next-app --example https://github.com/vercel-labs/ai-sdk-preview-python-streaming ai-sdk-preview-python-streaming-example
+npm install
 ```
 
-```bash
-pnpm create next-app --example https://github.com/vercel-labs/ai-sdk-preview-python-streaming ai-sdk-preview-python-streaming-example
+3. **Set up environment variables**
+
+Create a `.env.local` file in the root directory:
+```env
+OPENAI_API_KEY=your_openai_api_key_here
 ```
 
-To run the example locally you need to:
+4. **Install Python dependencies**
+```bash
+pip install -r requirements.txt
+```
 
-1. Sign up for accounts with the AI providers you want to use (e.g., OpenAI, Anthropic).
-2. Obtain API keys for each provider.
-3. Set the required environment variables as shown in the `.env.example` file, but in a new file called `.env`.
-4. `pnpm install` to install the required Node dependencies.
-5. `virtualenv venv` to create a virtual environment.
-6. `source venv/bin/activate` to activate the virtual environment.
-7. `pip install -r requirements.txt` to install the required Python dependencies.
-8. `pnpm dev` to launch the development server.
+5. **Run the development server**
+```bash
+npm run dev
+```
 
-## Learn More
+6. **Open your browser**
 
-To learn more about the AI SDK or Next.js by Vercel, take a look at the following resources:
+Navigate to [http://localhost:3000](http://localhost:3000)
 
-- [AI SDK Documentation](https://sdk.vercel.ai/docs)
-- [Next.js Documentation](https://nextjs.org/docs)
+## 📁 Project Structure
+
+```
+portfolio-project/
+├── app/                    # Next.js app directory
+│   ├── (chat)/            # Main chat interface
+│   ├── resume/            # Resume page
+│   ├── globals.css        # Global styles
+│   └── layout.tsx         # Root layout
+├── components/            # React components
+│   ├── chat.tsx          # Main chat interface
+│   ├── navbar.tsx        # Navigation bar
+│   ├── overview.tsx      # Hero section
+│   ├── why-hire-me-panel.tsx # About panel
+│   └── ui/               # Reusable UI components
+├── api/                  # Backend API routes
+│   ├── index.py         # FastAPI application
+│   └── utils/           # API utilities
+└── public/              # Static assets
+    └── resume/          # Resume PDF file
+```
+
+## 🎯 Key Sections
+
+### 🏠 Home
+- Hero section with introduction
+- "Why Hire Me" call-to-action
+- Professional summary
+
+### 💬 AI Chat
+- Interactive chatbot for inquiries
+- Context-aware responses about experience and skills
+- "Why Hire Me" information panel
+
+### 📋 Resume
+- Dedicated page for viewing resume
+- PDF viewer with download option
+- Professional presentation
+
+### 🔗 Links
+- GitHub profile
+- LinkedIn profile
+- Contact information
+
+## 🎨 Design Philosophy
+
+This portfolio embraces a **tech-minimalist** aesthetic with:
+- **Dark theme** for reduced eye strain
+- **Monospace typography** for technical authenticity
+- **Subtle animations** for professional polish
+- **Grid patterns** as a nod to technical interfaces
+- **High contrast** for accessibility
+
+## 📞 Contact
+
+**Yasser Ali** - AI Engineer
+
+- **Email**: yasser100ali@gmail.com
+- **Phone**: 657-777-0021
+- **LinkedIn**: [linkedin.com/in/yasser-a-a7146795/](https://linkedin.com/in/yasser-a-a7146795/)
+- **GitHub**: [github.com/yasser100ali](https://github.com/yasser100ali)
+
+## 📜 License
+
+This project is private and not licensed for public use.
+
+---
+
+*Built with ❤️ using Next.js, FastAPI, and modern web technologies*

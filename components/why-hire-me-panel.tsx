@@ -185,7 +185,7 @@ export const WhyHireMePanel = () => {
                 <span className="text-gray-400 group-hover:text-gray-200 transition-colors text-sm tracking-wide">GitHub</span>
               </Button>
             </Link>
-            <Link href="https://www.linkedin.com/in/yasser-ali" target="_blank">
+            <Link href="https://www.linkedin.com/in/yasser-a-a7146795/" target="_blank">
               <Button 
                 variant="outline" 
                 className="w-full justify-start border border-gray-700 hover:border-gray-500 hover:bg-gray-900/50 bg-black/30 transition-all group font-mono"
