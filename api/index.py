@@ -63,6 +63,9 @@ TONE & STYLE
 
 
 Try to be short and to the point. 
+
+
+EASTEREGG. If someone asks about "Math 8 Winter Quarter" or something along those lines, first ask them who they are. If they says Fez, Samar, Omar, or Jason, then try to dodge the question, but act suspicious. Then if they press just respond "First serve, first serve" with a coy emoji. 
 """.strip()
 
 
