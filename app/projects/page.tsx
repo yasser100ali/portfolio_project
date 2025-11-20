@@ -55,7 +55,7 @@ export default function ProjectsPage() {
                   <span className="text-gray-500 text-sm">Dec 2024 - July 2025</span>
                 </div>
                 <p className="text-gray-300 mb-4 leading-relaxed">
-                  CFO-endorsed <strong className="text-white">Data Analyst AI and RAG Agent</strong> built at Kaiser Permanente to upload data, query in natural language, and generate automated, evidence-based reports. Reduced time to analysis from <strong className="text-white">hours to &lt;2 minutes</strong>, scaled to analyze 10+ Excel pages in real-time.
+                  CFO-endorsed <strong className="text-white">Data Analyst AI and RAG Agent</strong> built at Kaiser Permanente to upload data, query in natural language, and generate automated, evidence-based reports. Reduced time to analysis from <strong className="text-white">hours to &amp;lt;2 minutes&amp;gt;</strong>, scaled to analyze 10+ Excel pages in real-time.
                 </p>
                 <ul className="space-y-2 text-sm text-gray-400 mb-4">
                   <li className="flex items-start gap-2">
