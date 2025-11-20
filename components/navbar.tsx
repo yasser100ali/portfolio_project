@@ -48,7 +48,7 @@ export const Navbar = () => {
               Why hire me
             </a>
             <a 
-              href="#projects" 
+              href="/projects" 
               className="text-sm font-mono font-medium text-gray-400 hover:text-gray-200 transition-colors tracking-wide"
             >
               Projects

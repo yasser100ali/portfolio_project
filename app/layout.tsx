@@ -46,7 +46,7 @@ export default function RootLayout({
         <Toaster position="top-center" richColors />
         <div className="flex flex-col h-full">
           <Navbar />
-          <div className="flex-1 overflow-hidden">
+          <div className="flex-1 overflow-y-auto">
             {children}
           </div>
         </div>
