@@ -115,7 +115,7 @@ export default function ProjectsPage() {
                   <span className="text-gray-500 text-sm">Sep 2025</span>
                 </div>
                 <p className="text-gray-300 mb-4 leading-relaxed">
-                  Engineered a <strong className="text-white">multi-agent legal platform</strong> (FastAPI, Next.js) that automates intake via <strong className="text-white">RAG-based case analysis</strong>, generating a weighted "Case Strength Score" (Based on Liability, Evidence and Damages) to prioritize high-value claims.
+                  Engineered a <strong className="text-white">multi-agent legal platform</strong> (FastAPI, Next.js) that automates intake via <strong className="text-white">RAG-based case analysis</strong>, generating a weighted &quot;Case Strength Score&quot; (Based on Liability, Evidence and Damages) to prioritize high-value claims.
                 </p>
                 <div className="flex items-center gap-4">
                   <a href="https://www.atlasai.legal/" target="_blank" rel="noopener noreferrer">
