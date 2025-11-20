@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export default function ResumePage() {
   return (
     <div className="min-h-screen bg-black text-gray-200">
-      <div className="container mx-auto px-4 py-12 max-w-4xl">
+      <div className="container mx-auto px-4 py-12 max-w-4xl pb-32">
         {/* Header with download button */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -54,9 +54,9 @@ export default function ResumePage() {
           transition={{ duration: 0.5, delay: 0.2 }}
           className="bg-gray-900 border border-gray-800 rounded-lg overflow-hidden shadow-2xl"
         >
-          <div className="relative w-full aspect-[8.5/11]">
+          <div className="relative w-full h-[85vh]">
             <iframe
-              src="/resume/yasser-ali-resume.pdf#toolbar=0&navpanes=0&scrollbar=0&view=FitH"
+              src="/resume/yasser-ali-resume.pdf#toolbar=0&navpanes=0&view=FitH"
               className="w-full h-full"
               style={{ border: 'none' }}
               title="Yasser Ali Resume"
