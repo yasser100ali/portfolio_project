@@ -109,11 +109,6 @@ export default function WhyHireMePage() {
           backgroundImage: 'linear-gradient(rgba(128, 128, 128, 0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(128, 128, 128, 0.1) 1px, transparent 1px)',
           backgroundSize: '50px 50px',
         }} />
-        <div className="absolute inset-0 opacity-5" style={{
-          backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(128, 128, 128, 0.05) 2px, rgba(128, 128, 128, 0.05) 4px)',
-        }} />
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gray-700/5 blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-gray-600/5 blur-3xl" />
       </div>
 
       <div className="relative z-10 container mx-auto px-4 lg:px-8 py-16 max-w-6xl">

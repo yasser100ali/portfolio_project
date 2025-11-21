@@ -57,7 +57,7 @@ export default function ProjectsPage() {
                 <p className="text-gray-300 mb-4 leading-relaxed">
                   CFO-endorsed <strong className="text-white">Data Analyst AI and RAG Agent</strong> built at Kaiser Permanente to upload data, query in natural language, and generate automated, evidence-based reports. Reduced time to analysis from <strong className="text-white">hours to &amp;lt;2 minutes&amp;gt;</strong>, scaled to analyze 10+ Excel pages in real-time.
                 </p>
-                <ul className="space-y-2 text-sm text-gray-400 mb-4">
+                <ul className="space-y-2 text-sm text-gray-400 mb-6">
                   <li className="flex items-start gap-2">
                     <span className="mt-1.5 h-1 w-1 rounded-full bg-blue-400 flex-shrink-0" />
                     <span>Engineered evaluation pipeline reducing hallucination rates by <strong className="text-gray-300">60%+</strong></span>
@@ -71,6 +71,42 @@ export default function ProjectsPage() {
                     <span>Random Forest models for hospital bottleneck prediction</span>
                   </li>
                 </ul>
+
+                {/* Open Source Version Divider */}
+                <div className="relative py-4 mb-4">
+                  <div className="absolute inset-0 flex items-center">
+                    <div className="w-full border-t border-gray-700/50"></div>
+                  </div>
+                  <div className="relative flex justify-center">
+                    <span className="bg-black/50 px-4 text-xs text-blue-400 font-mono uppercase tracking-wider border border-gray-800 rounded-full backdrop-blur-sm">Open Source Initiative</span>
+                  </div>
+                </div>
+
+                <div className="bg-gray-900/50 rounded-lg p-4 border border-gray-800/50">
+                  <div className="flex justify-between items-start mb-2">
+                    <h4 className="text-md font-bold text-white flex items-center gap-2">
+                      Atlas Analyst Agent
+                      <span className="text-xs font-normal text-blue-400 border border-blue-400/30 px-2 py-0.5 rounded">Late Nov 2025</span>
+                    </h4>
+                  </div>
+                  <p className="text-sm text-gray-400 mb-4 leading-relaxed">
+                    Currently building an open-source, free version of the enterprise agent. Features file uploads (CSV/Excel/PDF), real-time streaming analysis, and advanced visualization capabilities.
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <a href="https://dataanalyst-zeta.vercel.app/" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="h-8 text-xs gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                        Live Demo
+                      </Button>
+                    </a>
+                    <a href="https://github.com/yasser100ali/data_analyst" target="_blank" rel="noopener noreferrer">
+                      <Button variant="outline" size="sm" className="h-8 text-xs gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
+                        <GitIcon />
+                        GitHub
+                      </Button>
+                    </a>
+                  </div>
+                </div>
               </motion.div>
 
               {/* AI Medical Assistant */}
