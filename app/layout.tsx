@@ -17,6 +17,10 @@ export const metadata = {
   title: "Yasser Ali - AI Engineer",
   description:
     "Use the Data Stream Protocol to stream chat completions from a Python endpoint (FastAPI) and display them using the useChat hook in your Next.js application.",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+  },
   openGraph: {
     images: [
       {
@@ -41,7 +45,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full">
-      <head></head>
       <body className={cn(GeistSans.className, "antialiased dark h-full overflow-hidden")}>
         <Toaster position="top-center" richColors />
         <div className="flex flex-col h-full">
