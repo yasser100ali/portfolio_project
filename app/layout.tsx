@@ -17,12 +17,6 @@ export const metadata = {
   title: "Yasser Ali - AI Engineer",
   description:
     "Use the Data Stream Protocol to stream chat completions from a Python endpoint (FastAPI) and display them using the useChat hook in your Next.js application.",
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-    maximumScale: 5,
-    userScalable: true,
-  },
   openGraph: {
     images: [
       {
@@ -38,6 +32,15 @@ export const metadata = {
       },
     ],
   },
+};
+
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  minimumScale: 1.0,
+  maximumScale: 5.0,
+  userScalable: true,
+  viewportFit: "cover",
 };
 
 export default function RootLayout({

@@ -133,6 +133,8 @@
         -webkit-text-size-adjust: 100%;
         -moz-text-size-adjust: 100%;
         text-size-adjust: 100%;
+        zoom: 1;
+        min-height: 100%;
     }
     
     * {
@@ -140,6 +142,10 @@
     }
     body {
         @apply bg-background text-foreground;
+        zoom: 1;
+        -webkit-text-size-adjust: 100%;
+        -moz-text-size-adjust: 100%;
+        text-size-adjust: 100%;
     }
 
     /* Custom scrollbar for dark theme */
@@ -165,6 +171,18 @@
     * {
         scrollbar-width: thin;
         scrollbar-color: hsl(var(--border)) hsl(var(--background));
+    }
+}
+
+/* Prevent browser zoom adjustments on smaller screens */
+@media screen and (max-width: 1920px) {
+    html {
+        font-size: 16px !important;
+        zoom: 1 !important;
+    }
+    body {
+        font-size: 16px !important;
+        zoom: 1 !important;
     }
 }
 
