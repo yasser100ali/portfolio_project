@@ -93,12 +93,9 @@ export default function ProjectsPage() {
                     Currently building an open-source, free version of the enterprise agent. Features file uploads (CSV/Excel/PDF), real-time streaming analysis, and advanced visualization capabilities.
                   </p>
                   <div className="flex items-center gap-3">
-                    <a href="https://dataanalyst-zeta.vercel.app/" target="_blank" rel="noopener noreferrer">
-                      <Button variant="outline" size="sm" className="h-8 text-xs gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                        Live Demo
-                      </Button>
-                    </a>
+                    <div className="h-8 px-4 inline-flex items-center rounded border border-dashed border-gray-700 text-xs font-mono uppercase tracking-wide text-gray-400">
+                      Coming soon — Dec 5th
+                    </div>
                     <a href="https://github.com/yasser100ali/data_analyst" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" size="sm" className="h-8 text-xs gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
                         <GitIcon />
