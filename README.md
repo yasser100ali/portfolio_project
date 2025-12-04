@@ -2,8 +2,6 @@
 
 A modern, interactive portfolio website showcasing my work and experience as an AI Engineer specializing in intelligent systems, machine learning, and full-stack development.
 
-![Portfolio Preview](https://via.placeholder.com/800x400/1a1a1a/00ff00?text=Yasser+Ali+Portfolio)
-
 ## ✨ Features
 
 ### 🤖 AI-Powered Chat Interface
