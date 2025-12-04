@@ -1,6 +1,6 @@
 # Yasser Ali - AI Engineer Portfolio
 
-A modern, interactive portfolio website showcasing the work and expertise of Yasser Ali, an AI Engineer specializing in intelligent systems, machine learning, and full-stack development.
+A modern, interactive portfolio website showcasing my work and experience as an AI Engineer specializing in intelligent systems, machine learning, and full-stack development.
 
 ![Portfolio Preview](https://via.placeholder.com/800x400/1a1a1a/00ff00?text=Yasser+Ali+Portfolio)
 
