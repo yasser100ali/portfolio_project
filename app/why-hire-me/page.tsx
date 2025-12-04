@@ -3,8 +3,16 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { useState } from "react";
 
 export default function WhyHireMePage() {
+  const [copied, setCopied] = useState(false);
+
+  const copyEmail = () => {
+    navigator.clipboard.writeText("yasser100ali@gmail.com");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
   const skills = [
     { 
       name: "AI & ML Engineering", 
@@ -35,39 +43,6 @@ export default function WhyHireMePage() {
       name: "UX/UI Design", 
       icon: ">",
       description: "Creating beautiful, intuitive interfaces with modern design principles"
-    }
-  ];
-
-  const highlights = [
-    {
-      icon: "[01]",
-      title: "Production-Grade AI",
-      description: "I don't just experiment with AI—I ship it. Experience building scalable AI systems that handle real-world complexity, from LLM integrations to multi-agent architectures that solve actual business problems.",
-      tech: ["OpenAI", "Anthropic Claude", "RAG Systems", "Vector DBs"]
-    },
-    {
-      icon: "[02]",
-      title: "Full-Stack Mastery",
-      description: "True end-to-end capability. I design elegant React interfaces, build robust Python backends, and ensure everything works seamlessly together. No hand-offs needed—I own the entire stack.",
-      tech: ["React/Next.js", "Python/FastAPI", "TypeScript", "Tailwind CSS"]
-    },
-    {
-      icon: "[03]",
-      title: "Problem Solver First",
-      description: "Technology is just a tool. I focus on understanding your challenges deeply and crafting solutions that genuinely move the needle. I translate complex requirements into working products that users love.",
-      tech: ["System Design", "Architecture", "Requirements Analysis"]
-    },
-    {
-      icon: "[04]",
-      title: "Speed & Quality",
-      description: "Fast iteration without compromising on quality. I write clean, maintainable code with proper testing and documentation. Ship features quickly while building a solid foundation for future growth.",
-      tech: ["Git", "CI/CD", "Testing", "Documentation"]
-    },
-    {
-      icon: "[05]",
-      title: "Design-Minded Engineer",
-      description: "I care deeply about user experience. Every interface I build is thoughtfully designed with attention to detail, modern aesthetics, and smooth interactions that delight users.",
-      tech: ["UI/UX", "Framer Motion", "Responsive Design", "Accessibility"]
     }
   ];
 
@@ -187,59 +162,6 @@ export default function WhyHireMePage() {
           </div>
         </motion.section>
 
-        {/* What I Bring */}
-        <motion.section
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.6 }}
-          className="mb-20"
-        >
-          <div className="mb-8">
-            <h2 className="text-3xl md:text-4xl font-bold font-mono text-gray-200 mb-3 tracking-wide">
-              [ What Sets Me Apart ]
-            </h2>
-            <p className="text-gray-500 font-mono text-sm">
-              More than just technical skills—the complete package
-            </p>
-          </div>
-
-          <div className="space-y-6">
-            {highlights.map((highlight, index) => (
-              <motion.div
-                key={highlight.title}
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 + index * 0.1 }}
-                className="border border-gray-700 bg-black/50 p-6 hover:border-gray-500 transition-all group"
-              >
-                <div className="flex items-start gap-4 mb-4">
-                  <span className="font-mono text-gray-500 group-hover:text-gray-400 transition-colors font-bold text-xl">
-                    {highlight.icon}
-                  </span>
-                  <div className="flex-1">
-                    <h3 className="font-mono font-bold text-gray-200 group-hover:text-white transition-colors text-xl mb-2">
-                      {highlight.title}
-                    </h3>
-                    <p className="text-gray-400 font-mono leading-relaxed mb-4">
-                      {highlight.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2">
-                      {highlight.tech.map((tech) => (
-                        <span
-                          key={tech}
-                          className="px-3 py-1 bg-gray-900/50 border border-gray-700 text-gray-400 text-xs font-mono"
-                        >
-                          {tech}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.section>
-
         {/* Value Propositions */}
         <motion.section
           initial={{ opacity: 0, y: 30 }}
@@ -333,10 +255,11 @@ export default function WhyHireMePage() {
                 </Button>
               </Link>
               <Button
+                onClick={copyEmail}
                 size="lg"
                 className="bg-white text-black hover:bg-gray-100 font-mono font-medium px-8 tracking-wide transition-all border border-gray-300"
               >
-                Contact Me
+                {copied ? "Copied!" : "yasser100ali@gmail.com"}
               </Button>
             </div>
           </motion.section>
