@@ -2,7 +2,6 @@
 
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
-import { GitIcon } from "./icons";
 
 export const Navbar = () => {
   return (
@@ -19,10 +18,10 @@ export const Navbar = () => {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
-            className="flex items-center relative"
+            className="flex items-center relative flex-1"
           >
             <a href="/" className="no-underline">
-              <div className="relative px-3 py-1 border border-gray-600 bg-black/50 font-mono font-bold text-gray-300 tracking-wider hover:border-gray-400 hover:bg-gray-800/50 transition-all cursor-pointer">
+              <div className="relative px-4 py-1 border border-gray-600 bg-black/50 font-mono font-bold text-gray-300 tracking-wider hover:border-gray-400 hover:bg-gray-800/50 transition-all cursor-pointer">
                 [YA]
               </div>
             </a>
@@ -33,7 +32,7 @@ export const Navbar = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3 }}
-            className="hidden md:flex items-center gap-6"
+            className="hidden md:flex items-center gap-6 absolute left-1/2 transform -translate-x-1/2"
           >
             <a
               href="/resume"
@@ -60,7 +59,7 @@ export const Navbar = () => {
             initial={{ opacity: 0, x: 20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.4 }}
-            className="flex items-center gap-3"
+            className="flex items-center gap-3 flex-1 justify-end"
           >
             <a 
               href="https://github.com/yasser100ali" 
@@ -70,10 +69,22 @@ export const Navbar = () => {
             >
               <Button 
                 variant="ghost" 
-                size="icon"
-                className="border border-gray-600 hover:border-gray-400 hover:bg-gray-800 hover:text-gray-200 transition-all text-gray-400"
+                className="border border-gray-600 hover:border-gray-400 hover:bg-gray-800 hover:text-gray-200 transition-all text-gray-400 px-3 h-9 font-mono text-xs uppercase tracking-wider"
               >
-                <GitIcon />
+                GitHub
+              </Button>
+            </a>
+            <a 
+              href="https://www.linkedin.com/in/yasser-engineer/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="no-underline"
+            >
+              <Button 
+                variant="ghost" 
+                className="border border-gray-600 hover:border-gray-400 hover:bg-gray-800 hover:text-gray-200 transition-all text-gray-400 px-3 h-9 font-mono text-xs uppercase tracking-wider"
+              >
+                LinkedIn
               </Button>
             </a>
           </motion.div>
