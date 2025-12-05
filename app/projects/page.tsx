@@ -93,9 +93,14 @@ export default function ProjectsPage() {
                     Currently building an open-source, free version of the enterprise agent. Features file uploads (CSV/Excel/PDF), real-time streaming analysis, and advanced visualization capabilities.
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="h-8 px-4 inline-flex items-center rounded border border-dashed border-gray-700 text-xs font-mono uppercase tracking-wide text-gray-400">
-                      Coming soon — Dec 5th
-                    </div>
+                    <a
+                      href="https://atlasanalyst.com"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="h-8 px-4 inline-flex items-center rounded border border-dashed border-gray-700 text-xs font-mono uppercase tracking-wide text-gray-400 hover:border-gray-500 hover:text-gray-200 transition-colors"
+                    >
+                      atlasanalyst.com
+                    </a>
                     <a href="https://github.com/yasser100ali/data_analyst" target="_blank" rel="noopener noreferrer">
                       <Button variant="outline" size="sm" className="h-8 text-xs gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
                         <GitIcon />
