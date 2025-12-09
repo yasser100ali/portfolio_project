@@ -97,7 +97,7 @@ export default function ProjectsPage() {
                       href="https://atlasanalyst.com"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="h-8 px-4 inline-flex items-center rounded border border-dashed border-gray-700 text-xs font-mono uppercase tracking-wide text-gray-400 hover:border-gray-500 hover:text-gray-200 transition-colors"
+                      className="h-8 px-4 inline-flex items-center rounded border border-gray-700 text-xs font-mono uppercase tracking-wide text-gray-400 hover:border-gray-500 hover:text-gray-200 transition-colors"
                     >
                       atlasanalyst.com
                     </a>
@@ -129,7 +129,7 @@ export default function ProjectsPage() {
                   <a href="https://www.aiscribe.cafe/" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" size="sm" className="gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                      Live Demo
+                      aiscribe.cafe
                     </Button>
                   </a>
                   <a href="https://github.com/yasser100ali/ai_medical_assistant" target="_blank" rel="noopener noreferrer">
@@ -159,7 +159,7 @@ export default function ProjectsPage() {
                   <a href="https://www.atlasai.legal/" target="_blank" rel="noopener noreferrer">
                     <Button variant="outline" size="sm" className="gap-2 border-gray-700 hover:bg-gray-800 text-gray-300">
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                      Live Demo
+                      atlasai.legal
                     </Button>
                   </a>
                   <a href="https://github.com/yasser100ali/law-ai" target="_blank" rel="noopener noreferrer">
