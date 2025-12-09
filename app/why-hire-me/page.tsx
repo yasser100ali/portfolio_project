@@ -257,7 +257,7 @@ export default function WhyHireMePage() {
               <Button
                 onClick={copyEmail}
                 size="lg"
-                className="bg-white text-black hover:bg-gray-100 font-mono font-medium px-8 tracking-wide transition-all border border-gray-300"
+                className="bg-black text-white hover:bg-gray-900 font-mono font-medium px-8 tracking-wide transition-all border border-gray-700"
               >
                 {copied ? "Copied!" : "yasser100ali@gmail.com"}
               </Button>

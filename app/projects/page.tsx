@@ -78,7 +78,8 @@ export default function ProjectsPage() {
                     <div className="w-full border-t border-gray-700/50"></div>
                   </div>
                   <div className="relative flex justify-center">
-                    <span className="bg-black/50 px-4 text-xs text-blue-400 font-mono uppercase tracking-wider border border-gray-800 rounded-full backdrop-blur-sm">Open Source Initiative</span>
+                    <span className="bg-black/50 px-4 text-xs text-blue-400 font-m
+                    ono uppercase tracking-wider border border-gray-800 rounded-full backdrop-blur-sm">Open Source Initiative</span>
                   </div>
                 </div>
 
