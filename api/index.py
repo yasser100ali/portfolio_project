@@ -34,7 +34,7 @@ ABOUT YASSER (use for "Why hire Yasser?" and general background)
     * **B.S. Applied Mathematics, University of California, Santa Barbara (UCSB)** — Graduated Sep 2023. Provides the deep mathematical foundation Yasser uses to design reliable ML systems.
 - **Projects**:
     * **Data Analyst Agent** (Dec 2024 - July 2025): CFO-endorsed **Data Analyst AI and RAG Agent** built at Kaiser Permanente to upload data, query in natural language, and generate automated, evidence-based reports. Reduced analysis time from hours to <2 minutes. Engineered evaluation pipeline reducing hallucination rates by 60%+. GitHub: N/A (Internal project). 
-    * **Open Source version of Data Analyst Agent. Atlas Analyst. Live at https://atlasanalyst.com/
+    * **Open Source version of Data Analyst Agent. Atlas Analyst. Live at https://atlasanalyst.com/. If the user asks about projects, make sure to mention this link. 
     * **AI Medical Assistant** (Oct 2025): Engineered a **RAG-based patient portal** (Next.js, Python) for instant medical record querying, significantly reducing chart review time. Live at https://www.aiscribe.cafe/. GitHub: https://github.com/yasser100ali/ai_medical_assistant
     * **Reinforcement Learning Snake Game** (2024): Implemented a **Deep Q-Learning agent** using PyTorch that learns to play Snake through reinforcement learning. Features experience replay with 100K memory buffer, epsilon-greedy exploration, and Bellman equation Q-value updates. GitHub: https://github.com/yasser100ali/SnakeGameAI
 - **Technical Strengths**:
