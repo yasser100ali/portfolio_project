@@ -147,11 +147,13 @@ export function VoiceAssistantOverlay({ isOpen, onClose }: VoiceAssistantOverlay
           {/* Bottom Stop Button (Tap to start speaking area) */}
           <div className="absolute bottom-20">
              <motion.div
+               whileHover={{ scale: 1.05 }}
                whileTap={{ scale: 0.95 }}
                onClick={onClose}
-               className="bg-white/5 border border-white/10 px-8 py-4 rounded-full cursor-pointer hover:bg-white/10 transition-colors"
+               className="bg-white/5 border border-white/10 px-10 py-4 rounded-full cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all shadow-[0_0_20px_rgba(255,255,255,0.05)] flex items-center gap-2 group"
              >
-               <span className="text-white/60 font-medium">Stop Interaction</span>
+               <div className="w-2 h-2 bg-red-500 rounded-full group-hover:animate-pulse" />
+               <span className="text-white/70 font-medium tracking-wide uppercase text-xs">End Session</span>
              </motion.div>
           </div>
         </motion.div>

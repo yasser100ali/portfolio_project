@@ -220,13 +220,13 @@ export function MultimodalInput({
         }}
       />
 
-      <div className="absolute bottom-2 right-2 flex gap-2 m-0.5">
+      <div className="absolute bottom-2 right-2 flex gap-2.5 m-0.5">
         <Button
           className={cn(
-            "p-1.5 h-fit transition-all rounded-full border",
+            "p-2 h-fit transition-all rounded-full border shadow-sm",
             isListening 
-              ? "bg-red-500/10 border-red-500 text-red-500 hover:bg-red-500/20 animate-pulse" 
-              : "bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
+              ? "bg-red-500/20 border-red-500 text-red-500 hover:bg-red-500/30 animate-pulse shadow-[0_0_15px_rgba(239,68,68,0.5)]" 
+              : "bg-white/10 border-white/20 text-white hover:bg-white/20 hover:border-white/30 shadow-[0_0_10px_rgba(255,255,255,0.1)]"
           )}
           onClick={(event) => {
             event.preventDefault();
@@ -235,30 +235,30 @@ export function MultimodalInput({
           type="button"
           title={isListening ? "Stop listening" : "Start listening"}
         >
-          <MicrophoneIcon size={14} />
+          <MicrophoneIcon size={16} />
         </Button>
 
         {isLoading ? (
           <Button
-            className="p-1.5 h-fit bg-gray-800 border border-gray-600 hover:bg-gray-700 hover:text-white transition-all rounded-full"
+            className="p-2 h-fit bg-gray-900 border border-gray-700 hover:bg-gray-800 hover:text-white transition-all rounded-full shadow-sm"
             onClick={(event) => {
               event.preventDefault();
               stop();
               setMessages((messages) => sanitizeUIMessages(messages));
             }}
           >
-            <StopIcon size={14} />
+            <StopIcon size={16} />
           </Button>
         ) : (
           <Button
-            className="p-1.5 h-fit bg-white text-black hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-full"
+            className="p-2 h-fit bg-white text-black hover:bg-gray-200 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-full shadow-[0_0_15px_rgba(255,255,255,0.2)]"
             onClick={(event) => {
               event.preventDefault();
               submitForm();
             }}
             disabled={input.length === 0}
           >
-            <ArrowUpIcon size={14} />
+            <ArrowUpIcon size={16} />
           </Button>
         )}
       </div>
