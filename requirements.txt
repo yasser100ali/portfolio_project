@@ -11,5 +11,4 @@ cuid
 
 psycopg2-binary>=2.9.9
 
-# for vapi, voice AI assistants
-vapi-python>=0.1.9
+
