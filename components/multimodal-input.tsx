@@ -51,7 +51,7 @@ export function MultimodalInput({
 }: {
   chatId: string;
   input: string;
-  setInput: (value: string) => void;
+  setInput: (value: string | ((prev: string) => string)) => void;
   isLoading: boolean;
   stop: () => void;
   messages: Array<Message>;
