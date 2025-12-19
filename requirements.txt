@@ -10,3 +10,6 @@ openpyxl
 cuid
 
 psycopg2-binary>=2.9.9
+
+# for vapi, voice AI assistants
+vapi-python>=1.0.0
