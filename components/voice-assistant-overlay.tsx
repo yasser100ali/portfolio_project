@@ -3,13 +3,42 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { XIcon } from "lucide-react";
 import { Button } from "./ui/button";
+import { useEffect, useState } from "react";
 
 interface VoiceAssistantOverlayProps {
   isOpen: boolean;
   onClose: () => void;
 }
 
+interface Point {
+  x: number;
+  y: number;
+  z: number;
+}
+
 export function VoiceAssistantOverlay({ isOpen, onClose }: VoiceAssistantOverlayProps) {
+  const [points, setPoints] = useState<Point[]>([]);
+  const pointCount = 200;
+
+  useEffect(() => {
+    // Generate points on a sphere using Fibonacci lattice for even distribution
+    const newPoints: Point[] = [];
+    const goldenRatio = (1 + Math.sqrt(5)) / 2;
+
+    for (let i = 0; i < pointCount; i++) {
+      const y = 1 - (i / (pointCount - 1)) * 2; // y goes from 1 to -1
+      const radius = Math.sqrt(1 - y * y); // radius at y
+
+      const theta = (2 * Math.PI * i) / goldenRatio; // golden angle increment
+
+      const x = Math.cos(theta) * radius;
+      const z = Math.sin(theta) * radius;
+
+      newPoints.push({ x, y, z });
+    }
+    setPoints(newPoints);
+  }, []);
+
   return (
     <AnimatePresence>
       {isOpen && (
@@ -17,7 +46,7 @@ export function VoiceAssistantOverlay({ isOpen, onClose }: VoiceAssistantOverlay
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black"
+          className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-black overflow-hidden"
         >
           {/* Close Button */}
           <div className="absolute top-6 right-6">
@@ -31,106 +60,43 @@ export function VoiceAssistantOverlay({ isOpen, onClose }: VoiceAssistantOverlay
             </Button>
           </div>
 
-          {/* Animated 3D-like Sphere */}
-          <div className="relative w-64 h-64 flex items-center justify-center">
-            {/* Outer pulsing ring */}
+          {/* Atomic Sphere Container */}
+          <div className="relative w-96 h-96 flex items-center justify-center">
             <motion.div
               animate={{
-                scale: [1, 1.1, 1],
-                rotate: 360,
+                rotateY: [0, 360],
+                rotateX: [0, 180, 0],
               }}
               transition={{
-                duration: 8,
+                duration: 15,
                 repeat: Infinity,
                 ease: "linear",
               }}
-              className="absolute inset-0 border border-white/10 rounded-full"
-            />
-            
-            {/* Middle pulsing ring */}
-            <motion.div
-              animate={{
-                scale: [1.1, 1, 1.1],
-                rotate: -360,
-              }}
-              transition={{
-                duration: 12,
-                repeat: Infinity,
-                ease: "linear",
-              }}
-              className="absolute inset-4 border border-white/20 rounded-full"
-            />
-
-            {/* Core "Dots" Sphere */}
-            <div className="relative w-40 h-40">
-              {[...Array(40)].map((_, i) => (
-                <motion.div
+              className="relative w-64 h-64 flex items-center justify-center"
+              style={{ transformStyle: "preserve-3d", perspective: "800px" }}
+            >
+              {points.map((point, i) => (
+                <div
                   key={i}
-                  className="absolute w-1 h-1 bg-white rounded-full"
-                  initial={{
-                    x: 80,
-                    y: 80,
-                  }}
-                  animate={{
-                    x: 80 + Math.cos((i * 9 * Math.PI) / 180) * (60 + Math.sin(i + Math.PI) * 20),
-                    y: 80 + Math.sin((i * 9 * Math.PI) / 180) * (60 + Math.cos(i + Math.PI) * 20),
-                    scale: [1, 1.5, 0.8, 1.2, 1],
-                    opacity: [0.2, 0.7, 0.4, 0.8, 0.2],
-                  }}
-                  transition={{
-                    duration: 4 + Math.random() * 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.05,
+                  className="absolute w-0.5 h-0.5 bg-white rounded-full"
+                  style={{
+                    transform: `translate3d(${point.x * 120}px, ${point.y * 120}px, ${point.z * 120}px)`,
+                    opacity: 0.4 + (point.z + 1) / 2 * 0.6, // Higher opacity for points in front
                   }}
                 />
               ))}
-              
-              {/* Inner floating dots */}
-              {[...Array(20)].map((_, i) => (
-                <motion.div
-                  key={`inner-${i}`}
-                  className="absolute w-1 h-1 bg-white/40 rounded-full"
-                  initial={{
-                    x: 80,
-                    y: 80,
-                  }}
-                  animate={{
-                    x: 80 + Math.cos((i * 18 * Math.PI) / 180) * (30 + Math.sin(i) * 15),
-                    y: 80 + Math.sin((i * 18 * Math.PI) / 180) * (30 + Math.cos(i) * 15),
-                    scale: [0.8, 1.2, 0.8],
-                    opacity: [0.1, 0.4, 0.1],
-                  }}
-                  transition={{
-                    duration: 3 + Math.random() * 2,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                    delay: i * 0.1,
-                  }}
-                />
-              ))}
-
-              {/* Central glowing core */}
-              <motion.div
-                animate={{
-                  scale: [1, 1.2, 1],
-                  opacity: [0.5, 0.8, 0.5],
-                }}
-                transition={{
-                  duration: 2,
-                  repeat: Infinity,
-                }}
-                className="absolute inset-14 bg-white/20 blur-xl rounded-full"
-              />
-            </div>
+            </motion.div>
+            
+            {/* Ambient glow */}
+            <div className="absolute inset-0 bg-white/5 blur-[80px] rounded-full pointer-events-none" />
           </div>
 
           {/* Text Content */}
-          <div className="mt-12 text-center space-y-2">
+          <div className="mt-16 text-center space-y-3 z-10">
             <motion.h2
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="text-2xl font-medium text-white tracking-tight"
+              className="text-2xl font-light text-white tracking-[0.2em] uppercase"
             >
               Tap to start speaking
             </motion.h2>
@@ -138,22 +104,22 @@ export function VoiceAssistantOverlay({ isOpen, onClose }: VoiceAssistantOverlay
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-gray-500"
+              className="text-white/40 font-mono text-sm tracking-widest"
             >
               Speak naturally
             </motion.p>
           </div>
 
-          {/* Bottom Stop Button (Tap to start speaking area) */}
-          <div className="absolute bottom-20">
+          {/* Bottom End Button */}
+          <div className="absolute bottom-20 z-10">
              <motion.div
-               whileHover={{ scale: 1.05 }}
+               whileHover={{ scale: 1.05, backgroundColor: "rgba(255, 255, 255, 0.1)" }}
                whileTap={{ scale: 0.95 }}
                onClick={onClose}
-               className="bg-white/5 border border-white/10 px-10 py-4 rounded-full cursor-pointer hover:bg-white/10 hover:border-white/20 transition-all shadow-[0_0_20px_rgba(255,255,255,0.05)] flex items-center gap-2 group"
+               className="bg-white/5 border border-white/10 px-12 py-4 rounded-full cursor-pointer transition-all shadow-2xl flex items-center gap-3 group"
              >
-               <div className="w-2 h-2 bg-red-500 rounded-full group-hover:animate-pulse" />
-               <span className="text-white/70 font-medium tracking-wide uppercase text-xs">End Session</span>
+               <div className="w-1.5 h-1.5 bg-red-500 rounded-full group-hover:shadow-[0_0_8px_rgba(239,68,68,1)] transition-all" />
+               <span className="text-white/60 font-mono tracking-[0.3em] uppercase text-[10px]">End Session</span>
              </motion.div>
           </div>
         </motion.div>
@@ -161,4 +127,3 @@ export function VoiceAssistantOverlay({ isOpen, onClose }: VoiceAssistantOverlay
     </AnimatePresence>
   );
 }
-
