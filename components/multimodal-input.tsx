@@ -7,17 +7,22 @@ import {
   useRef,
   useEffect,
   useCallback,
+  useState,
   type Dispatch,
   type SetStateAction,
 } from "react";
 import { toast } from "sonner";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
+import Vapi from "@vapi-ai/web";
 
 import { cn, sanitizeUIMessages } from "@/lib/utils";
 
-import { ArrowUpIcon, StopIcon } from "./icons";
+import { ArrowUpIcon, StopIcon, MicrophoneIcon } from "./icons";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+
+const VAPI_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY || "";
+const VAPI_ASSISTANT_ID = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID || "";
 
 const suggestedActions = [
   {
@@ -65,6 +70,50 @@ export function MultimodalInput({
 }) {
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const { width } = useWindowSize();
+  const [isListening, setIsListening] = useState(false);
+  const vapiRef = useRef<any>(null);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && VAPI_PUBLIC_KEY) {
+      vapiRef.current = new Vapi(VAPI_PUBLIC_KEY);
+
+      vapiRef.current.on("call-start", () => setIsListening(true));
+      vapiRef.current.on("call-end", () => setIsListening(false));
+      vapiRef.current.on("message", (message: any) => {
+        if (message.type === "transcript" && message.transcriptType === "final") {
+          setInput((prev) => {
+            const newText = message.transcript.trim();
+            if (!newText) return prev;
+            return prev ? `${prev} ${newText}` : newText;
+          });
+        }
+      });
+
+      vapiRef.current.on("error", (error: any) => {
+        console.error("Vapi error:", error);
+        toast.error("Voice AI error occurred");
+        setIsListening(false);
+      });
+    }
+
+    return () => {
+      if (vapiRef.current) {
+        vapiRef.current.stop();
+      }
+    };
+  }, [setInput]);
+
+  const toggleListening = useCallback(() => {
+    if (isListening) {
+      vapiRef.current?.stop();
+    } else {
+      if (!VAPI_ASSISTANT_ID) {
+        toast.error("Vapi Assistant ID is not configured");
+        return;
+      }
+      vapiRef.current?.start(VAPI_ASSISTANT_ID);
+    }
+  }, [isListening]);
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -98,6 +147,7 @@ export function MultimodalInput({
 
   useEffect(() => {
     setLocalStorageInput(input);
+    adjustHeight();
   }, [input, setLocalStorageInput]);
 
   const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
@@ -171,29 +221,48 @@ export function MultimodalInput({
         }}
       />
 
-      {isLoading ? (
+      <div className="absolute bottom-2 right-2 flex gap-2 m-0.5">
         <Button
-          className="p-1.5 h-fit absolute bottom-2 right-2 m-0.5 bg-gray-800 border border-gray-600 hover:bg-gray-700 hover:text-white transition-all rounded-full"
+          className={cn(
+            "p-1.5 h-fit transition-all rounded-full border",
+            isListening 
+              ? "bg-red-500/10 border-red-500 text-red-500 hover:bg-red-500/20 animate-pulse" 
+              : "bg-gray-800 border-gray-700 text-gray-400 hover:bg-gray-700 hover:text-white"
+          )}
           onClick={(event) => {
             event.preventDefault();
-            stop();
-            setMessages((messages) => sanitizeUIMessages(messages));
+            toggleListening();
           }}
+          type="button"
+          title={isListening ? "Stop listening" : "Start listening"}
         >
-          <StopIcon size={14} />
+          <MicrophoneIcon size={14} />
         </Button>
-      ) : (
-        <Button
-          className="p-1.5 h-fit absolute bottom-2 right-2 m-0.5 bg-white text-black hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-full"
-          onClick={(event) => {
-            event.preventDefault();
-            submitForm();
-          }}
-          disabled={input.length === 0}
-        >
-          <ArrowUpIcon size={14} />
-        </Button>
-      )}
+
+        {isLoading ? (
+          <Button
+            className="p-1.5 h-fit bg-gray-800 border border-gray-600 hover:bg-gray-700 hover:text-white transition-all rounded-full"
+            onClick={(event) => {
+              event.preventDefault();
+              stop();
+              setMessages((messages) => sanitizeUIMessages(messages));
+            }}
+          >
+            <StopIcon size={14} />
+          </Button>
+        ) : (
+          <Button
+            className="p-1.5 h-fit bg-white text-black hover:bg-gray-100 transition-all disabled:opacity-50 disabled:cursor-not-allowed rounded-full"
+            onClick={(event) => {
+              event.preventDefault();
+              submitForm();
+            }}
+            disabled={input.length === 0}
+          >
+            <ArrowUpIcon size={14} />
+          </Button>
+        )}
+      </div>
     </div>
   );
 }
