@@ -51,7 +51,7 @@ export function MultimodalInput({
 }: {
   chatId: string;
   input: string;
-  setInput: (value: string | ((prev: string) => string)) => void;
+  setInput: (value: string) => void;
   isLoading: boolean;
   stop: () => void;
   messages: Array<Message>;
@@ -79,15 +79,10 @@ export function MultimodalInput({
 
       vapiRef.current.on("call-start", () => setIsListening(true));
       vapiRef.current.on("call-end", () => setIsListening(false));
-      vapiRef.current.on("message", (message: any) => {
-        if (message.type === "transcript" && message.transcriptType === "final") {
-          setInput((prev) => {
-            const newText = message.transcript.trim();
-            if (!newText) return prev;
-            return prev ? `${prev} ${newText}` : newText;
-          });
-        }
-      });
+
+      // Note: We are NOT adding a listener for transcripts here 
+      // as the user wants a pure audio-to-backend experience 
+      // without text appearing on screen.
 
       vapiRef.current.on("error", (error: any) => {
         console.error("Vapi error:", error);
@@ -101,19 +96,7 @@ export function MultimodalInput({
         vapiRef.current.stop();
       }
     };
-  }, [setInput]);
-
-  const toggleListening = useCallback(() => {
-    if (isListening) {
-      vapiRef.current?.stop();
-    } else {
-      if (!VAPI_ASSISTANT_ID) {
-        toast.error("Vapi Assistant ID is not configured");
-        return;
-      }
-      vapiRef.current?.start(VAPI_ASSISTANT_ID);
-    }
-  }, [isListening]);
+  }, []);
 
   useEffect(() => {
     if (textareaRef.current) {
@@ -127,6 +110,18 @@ export function MultimodalInput({
       textareaRef.current.style.height = `${textareaRef.current.scrollHeight + 2}px`;
     }
   };
+
+  const toggleListening = useCallback(() => {
+    if (isListening) {
+      vapiRef.current?.stop();
+    } else {
+      if (!VAPI_ASSISTANT_ID) {
+        toast.error("Vapi Assistant ID is not configured");
+        return;
+      }
+      vapiRef.current?.start(VAPI_ASSISTANT_ID);
+    }
+  }, [isListening]);
 
   const [localStorageInput, setLocalStorageInput] = useLocalStorage(
     "input",
@@ -147,7 +142,6 @@ export function MultimodalInput({
 
   useEffect(() => {
     setLocalStorageInput(input);
-    adjustHeight();
   }, [input, setLocalStorageInput]);
 
   const handleInput = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
