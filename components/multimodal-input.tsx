@@ -20,6 +20,7 @@ import { cn, sanitizeUIMessages } from "@/lib/utils";
 import { ArrowUpIcon, StopIcon, MicrophoneIcon } from "./icons";
 import { Button } from "./ui/button";
 import { Textarea } from "./ui/textarea";
+import { VoiceAssistantOverlay } from "./voice-assistant-overlay";
 
 const VAPI_PUBLIC_KEY = process.env.NEXT_PUBLIC_VAPI_PUBLIC_KEY || "";
 const VAPI_ASSISTANT_ID = process.env.NEXT_PUBLIC_VAPI_ASSISTANT_ID || "";
@@ -160,6 +161,10 @@ export function MultimodalInput({
 
   return (
     <div className="relative w-full flex flex-col gap-4">
+      <VoiceAssistantOverlay 
+        isOpen={isListening} 
+        onClose={() => vapiRef.current?.stop()} 
+      />
       {messages.length === 0 && (
         <div className="grid sm:grid-cols-2 gap-2 w-full">
           {suggestedActions.map((suggestedAction, index) => (
